@@ -273,13 +273,13 @@ div#features:hover {
 }
 
 .partner {
-  width: 200px;
+  width: 160px;
   height: 160px;
   transition: all 200ms linear;
 }
 
 .yeet {
   text-align: center;
-  padding: 18px;
+  padding: 100px;
 }
 
