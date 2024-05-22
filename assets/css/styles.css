@@ -1,12 +1,12 @@
 :root {
   --main-color: #3c3d3d;
   --background: #1d1d1e;
-  --background-image: url(https://i.pinimg.com/236x/75/18/69/7518698b93761c4e41611f768c432bde.jpg);
   --secondary: #2a2c2c;
   --link: #1d1f1e;
   --text-color: #fff;
   --secondary-text-color: #dcdcdc;
 }
+ background-image: url(https://i.pinimg.com/236x/75/18/69/7518698b93761c4e41611f768c432bde.jpg);
 
 /* scroll bar */
 
