@@ -1,183 +1,65 @@
-`html
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administração</title>
+    <title>Chat ao Vivo</title>
     <style>
-        :root {
-            --background: #202124; /* Cor de fundo padrão */
-            --main-color: #00EEFE; /* Cor principal */
-            --text-color: #ffffff; /* Cor do texto */
-            --secondary-text-color: #cccccc; /* Cor do texto secundário */
-        }
-
         body {
             font-family: Arial, sans-serif;
-            background-color: var(--background);
             margin: 0;
             padding: 0;
-            color: var(--text-color);
+            background-color: #f4f4f4;
         }
-
-        #top {
-            height: 12px;
+        .chat-container {
+            max-width: 800px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
         }
-
-        nav.navbar {
-            color: var(--main-color);
-            border-top-width: 6px;
-            border-top-style: solid;
-            background: var(--background);
+        .chat-box {
+            height: 400px;
+            overflow-y: scroll;
+            padding: 10px;
+            background-color: #fff;
         }
-
-        header {
-            text-align: center;
-            margin: 55px 0;
-            color: var(--text-color);
+        .chat-input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: none;
+            border-top: 1px solid #ccc;
+            resize: none;
         }
-
-        header img.partner {
-            width: 150px;
-            height: 150px;
-            margin-top: 30px;
-        }
-
-        header h1 {
-            color: var(--text-color);
-        }
-
-        .features-boxed {
-            background: var(--secondary);
-            padding-bottom: 50px;
-        }
-
-        .features-boxed .name {
-            color: var(--text-color);
-        }
-
-        .features-boxed .box {
-            background: var(--background);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-        }
-
-        .admin-card {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .admin-card img {
-            display: inline-block;
-            max-width: 200px;
-            height: auto;
-            border-radius: 50%;
-            margin: 20px;
-        }
-
-        .footer-dark {
-            background: var(--secondary);
-            padding-top: 0px;
-            padding-bottom: 0px;
-            color: var(--text-color);
-        }
-
-        .footer-dark .item.social a {
-            color: var(--text-color);
-        }
-
-        .footer-dark .item.social a:hover {
-            color: var(--main-color);
-        }
-
-        .footer-dark .copyright {
-            color: var(--text-color);
-            padding: 0px;
+        .chat-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: #fff;
+            cursor: pointer;
         }
     </style>
 </head>
-
 <body>
-    <div id="top"></div>
-    <nav class="navbar navbar-light navbar-expand fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Administração 💸</a>
-            <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
-    <header>
-        <img class="rounded-circle partner" src="https://cdn.discordapp.com/attachments/1241956404080935075/1242576285574758533/00676573b4dfbfb4543a75a5ee43ca6c-removebg-preview.png?ex=664e56d8&is=664d0558&hm=506c628d0a2e9c10e779688a633471ebf0dd356519bac6ed5ad35d6c6377c1c8" alt="Logo" width="150" height="150">
-        <h1>ADMINISTRAÇÃO</h1>
-    </header>
-    <div class="features-boxed">
-        <div class="container">
-            <h2 class="text-center name">IMPORTANTE</h2>
-            <div class="row justify-content-center features">
-                <div class="col-md-6 col-lg-4 item">
-                    <div class="box">
-                        <h3 class="name">QUEM SOMOS?</h3>
-                        <p class="description">Somos um grupo, criado com paixão por Keven e Maria. Nossa missão é simples: queremos que todos se divirtam e tenham a oportunidade de ganhar dinheiro ao mesmo tempo. Acreditamos que a diversão e o sucesso podem caminhar lado a lado, e é por isso que trabalhamos incansavelmente para oferecer uma plataforma onde você possa desfrutar de momentos emocionantes enquanto colhe os frutos do seu esforço.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 item">
-                    <div class="box">
-                        <h3 class="name">SEGUROS?</h3>
-                        <p class="description">Somos uma equipe comprometida em proporcionar uma experiência segura e confiável para todos os nossos usuários. Aqui, você pode ficar tranquilo sabendo que estamos sempre atentos à segurança dos seus dados e investimentos. Nossa prioridade é garantir a sua tranquilidade enquanto você aproveita todos os benefícios da nossa plataforma.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 item">
-                    <div class="box">
-                        <h3 class="name">O QUE TEMOS PARA OFERECER?</h3>
-                        <p class="description">O que temos para oferecer? Temos uma variedade de dinâmicas emocionantes, sorteios empolgantes e plataformas confiáveis. Mas isso não é tudo. O que realmente nos destaca são as pessoas incríveis dentro da nossa comunidade. Aqui, você não só pode desfrutar de todas as nossas ofertas, mas também pode se conectar com outros membros, conversar e ser você mesmo.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+        <textarea class="chat-input" id="chat-input" placeholder="Digite sua mensagem aqui..."></textarea>
+        <button class="chat-btn" onclick="sendMessage()">Enviar</button>
     </div>
-    <div id="admin">
-        <section>
-            <div class="container">
-                <h2 class="text-center name">ADMINISTRADORES</h2>
-                <div class="admin-card">
-                    <a href="https://instagram.com/kevinho_letre" target="_blank">
-                        <img src="https://cdn.discordapp.com/attachments/1241956404080935075/1242882172738736218/image.png?ex=664f73b9&is=664e2239&hm=7bbbf11aac36b0afc7415f943bb1e60affbd56ace1f522ba529f5a6c1a1c5cd1&" alt="Administrador 1">
-                    </a>
-                </div>
-                <div class="admin-card">
-                    <a href="https://instagram.com/duda_ldo
 
-" target="_blank">
-                        <img src="https://cdn.discordapp.com/attachments/1241956404080935075/1242882689510543461/image.png?ex=664f7434&is=664e22b4&hm=e268bea4a8171c8b821d405cf524f8e4f39b17ba6c29970d1e4e26b9f76bed4e&" alt="Administrador 2">
-                    </a>
-                </div>
-                <div class="admin-card">
-                    <a href="https://instagram.com/realbeeh" target="_blank">
-                        <img src="https://cdn.discordapp.com/attachments/1241956404080935075/1242883554384416881/image.png?ex=664f7503&is=664e2383&hm=9863a2acdaf9dadd39f56633adbaeb085f15f6deb1e8aecb4675c3b4888b6a24&" alt="Administrador 3">
-                    </a>
-                </div>
-            </div>
-        </section>
-    </div>
-    <div class="footer-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col item social">
-                    <a class="smoothScroll" href="#top">
-                        <i class="icon ion-android-arrow-up"></i>
-                    </a>
-                </div>
-            </div>
-            <p class="copyright">
-                Bryan Letre © 2024
-            </p>
-        </div>
-    </div>
+    <script>
+        function sendMessage() {
+            var message = document.getElementById("chat-input").value;
+            if (message.trim() !== "") {
+                var chatBox = document.getElementById("chat-box");
+                var newMessage = document.createElement("div");
+                newMessage.textContent = "Você: " + message;
+                chatBox.appendChild(newMessage);
+                chatBox.scrollTop = chatBox.scrollHeight; // Scroll para baixo
+                document.getElementById("chat-input").value = ""; // Limpa o campo de entrada
+            }
+        }
+    </script>
 </body>
-
 </html>
