@@ -1,284 +1,121 @@
-:root {
-  --main-color: #3c3d3d;
-  --background: #1d1d1e;
-  --secondary: #2a2c2c;
-  --link: #1d1f1e;
-  --text-color: #fff;
-  --secondary-text-color: #dcdcdc;
-}
-/* scroll bar */
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: black;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--main-color);
-}
-
-.footer-dark {
-  padding: 50px 0;
-}
-
-.footer-dark .item.text {
-  margin-bottom: 36px;
-}
-
-.footer-dark .item.social {
-  text-align: center;
-}
-
-.footer-dark .item.social > a {
-  font-size: 20px;
-  width: 36px;
-  height: 36px;
-  line-height: 36px;
-  display: inline-block;
-  text-align: center;
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.4);
-  margin: 0 8px;
-  color: #fff;
-  opacity: 0.75;
-}
-
-.footer-dark .item.social > a:hover {
-  background-color: #474350;
-}
-
-.footer-dark .copyright {
-  text-align: center;
-  padding-top: 24px;
-}
-
-/* features */
-
-.features-boxed {
-  color: #313437;
-  background-color: #eef4f7;
-}
-
-.features-boxed p {
-  color: #7d8285;
-}
-
-.features-boxed h2 {
-  font-weight: bold;
-  margin-bottom: 40px;
-  padding-top: 40px;
-  color: inherit;
-}
-
-@media (max-width:767px) {
-  .features-boxed h2 {
-    margin-bottom: 25px;
-    padding-top: 25px;
-    font-size: 24px;
-  }
-}
-
-.features-boxed .intro {
-  font-size: 16px;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.features-boxed .intro p {
-  margin-bottom: 0;
-}
-
-.features-boxed .features {
-  padding: 50px 0;
-}
-
-.features-boxed .item {
-  text-align: center;
-}
-
-.features-boxed .item .box {
-  text-align: center;
-  padding: 30px;
-  background-color: #fff;
-  margin-bottom: 30px;
-}
-
-.features-boxed .item .icon {
-  font-size: 60px;
-  color: #1485ee;
-  margin-top: 20px;
-  margin-bottom: 35px;
-}
-
-.features-boxed .item .name {
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 8px;
-  margin-top: 0;
-  color: inherit;
-}
-
-.features-boxed .item .description {
-  font-size: 15px;
-  margin-top: 15px;
-  margin-bottom: 20px;
-}
-
-a:hover {
-  text-decoration: none;
-  color: var(--main-color);
-}
-
-.shadow-lg.box:hover {
-  background: rgb(244,241,241);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-a {
-  color: var(--main-color);
-}
-
-/* accordion */
-
-* {
-  box-sizing: border-box;
-}
-
-*::before, *::after {
-  box-sizing: border-box;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #36393f;
+    color: #dcddde;
 }
 
 .container {
-  margin: 0 auto;
-  padding: 4rem;
-  color: var(--secondary-text-color);
+    display: flex;
+    height: 100vh;
 }
 
-.accordion .accordion-item {
-  border-bottom: 1px solid var(--text-color);
+.sidebar {
+    width: 20%;
+    background-color: #2f3136;
+    display: flex;
+    flex-direction: column;
 }
 
-.accordion .accordion-item button[aria-expanded='true'] {
-  border-bottom: 1px solid var(--link);
+.server-name {
+    padding: 15px;
+    background-color: #202225;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
 }
 
-.accordion button {
-  position: relative;
-  display: block;
-  text-align: left;
-  width: 100%;
-  padding: 1em 0;
-  color: var(--text-color);
-  font-size: 1.15rem;
-  font-weight: 400;
-  border: none;
-  background: none;
-  outline: none;
+.channels {
+    flex-grow: 1;
+    padding: 10px;
 }
 
-.accordion button:hover, .accordion button:focus {
-  cursor: pointer;
-  color: var(--link);
+.channel {
+    padding: 10px;
+    cursor: pointer;
+    color: #8e9297;
 }
 
-.accordion button:hover::after, .accordion button:focus::after {
-  cursor: pointer;
-  color: var(--link);
-  border-right: 1px solid var(--link);
+.channel:hover {
+    background-color: #393c43;
+    color: #fff;
 }
 
-.accordion button .accordion-title {
-  padding: 1em 1.5em 1em 0;
+.chat {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
 }
 
-.accordion button .icon {
-  display: inline-block;
-  position: absolute;
-  top: 18px;
-  right: 0;
-  width: 22px;
-  height: 22px;
+.chat-header {
+    padding: 15px;
+    background-color: #202225;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #2f3136;
 }
 
-.accordion button .icon::before {
-  display: block;
-  position: absolute;
-  content: '';
-  top: 9px;
-  left: 5px;
-  width: 10px;
-  height: 2px;
-  background: currentColor;
+.messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
 }
 
-.accordion button .icon::after {
-  display: block;
-  position: absolute;
-  content: '';
-  top: 5px;
-  left: 9px;
-  width: 2px;
-  height: 10px;
-  background: currentColor;
+.message {
+    display: flex;
+    margin-bottom: 20px;
 }
 
-.accordion button[aria-expanded='true'] {
-  color: var(--link);
+.avatar {
+    margin-right: 10px;
 }
 
-.accordion button[aria-expanded='true'] .icon::after {
-  width: 0;
+.avatar img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
 }
 
-.accordion button[aria-expanded='true'] + .accordion-content {
-  opacity: 1;
-  max-height: 250em;
-  transition: all 200ms linear;
-  will-change: opacity, max-height;
+.content {
+    max-width: 80%;
 }
 
-.accordion .accordion-content {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 200ms linear, max-height 200ms linear;
-  will-change: opacity, max-height;
+.username {
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.accordion .accordion-content p {
-  font-size: 1rem;
-  font-weight: 300;
-  margin: 2em 0;
+.timestamp {
+    font-weight: normal;
+    color: #72767d;
+    font-size: 12px;
+    margin-left: 5px;
 }
 
-div#features {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  border-radius: 25px;
-  background: var(--background);
+.text {
+    word-wrap: break-word;
 }
 
-div#features:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+.message-input {
+    padding: 10px;
+    background-color: #40444b;
+    border-top: 1px solid #2f3136;
+    display: flex;
 }
 
-.partner:hover {
-  border-radius: 598px;
-  border-style: solid;
-  border-color: var(--main-color);
+.message-input input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2f3136;
+    color: #dcddde;
+    font-size: 16px;
 }
 
-.partner {
-  width: 160px;
-  height: 160px;
-  transition: all 200ms linear;
+.message-input input::placeholder {
+    color: #72767d;
 }
-
-.yeet {
-  text-align: center;
-  padding: 18px;
-}
-
