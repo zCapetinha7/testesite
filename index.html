@@ -3,43 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discord-like Chat</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Servidor do Discord</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <div class="server-name">Servidor</div>
-            <div class="channels">
-                <div class="channel"># geral</div>
-                <div class="channel"># memes</div>
-                <div class="channel"># código</div>
-            </div>
-        </div>
-        <div class="chat">
-            <div class="chat-header">
-                <div class="channel-name"># geral</div>
-            </div>
-            <div class="messages">
-                <div class="message">
-                    <div class="avatar"><img src="avatar1.png" alt="User Avatar"></div>
-                    <div class="content">
-                        <div class="username">User1 <span class="timestamp">10:15 AM</span></div>
-                        <div class="text">Olá, tudo bem?</div>
-                    </div>
-                </div>
-                <div class="message">
-                    <div class="avatar"><img src="avatar2.png" alt="User Avatar"></div>
-                    <div class="content">
-                        <div class="username">User2 <span class="timestamp">10:16 AM</span></div>
-                        <div class="text">Oi! Tudo ótimo, e você?</div>
-                    </div>
-                </div>
-            </div>
-            <div class="message-input">
-                <input type="text" placeholder="Mensagem...">
-            </div>
-        </div>
+    <h1>Informações do Servidor</h1>
+    <div id="server-info">
+        <p>Nome do Servidor: <span id="server-name"></span></p>
+        <p>Total de Membros: <span id="member-count"></span></p>
+        <p>Membros Online: <span id="online-count"></span></p>
+        <h2>Admins</h2>
+        <ul id="admin-list"></ul>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
